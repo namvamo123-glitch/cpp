@@ -38,6 +38,7 @@
 *.exe
 *.out
 *.app
+*.check
 
 # Build directories
 build/
