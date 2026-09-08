@@ -28,6 +28,8 @@ g++ -std=c++17 -O2 ascii-art/mandelbrot.cpp -o ascii-art/mandelbrot
 
 Example output:
 
+![Colored ASCII Mandelbrot](ascii-art/mandelbrot.svg)
+
 ```text
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@
