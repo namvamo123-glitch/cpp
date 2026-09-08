@@ -33,8 +33,13 @@ On Windows PowerShell:
 .\ascii-art\mandelbrot.exe
 ```
 
-The program does not currently accept command-line options. It uses these
-defaults:
+By default, ANSI 256-color output is enabled. You can pass `--nocolor` to disable colored output:
+
+```sh
+./ascii-art/mandelbrot --nocolor
+```
+
+The program uses these defaults:
 
 - Width: 80 columns
 - Height: 25 rows
@@ -44,7 +49,11 @@ defaults:
 
 ## Example output
 
-Running the program with the defaults produces:
+Running the program with the defaults produces ANSI 256-color output:
+
+![Colored ASCII Mandelbrot](mandelbrot.svg)
+
+Running with `--nocolor` produces monochrome text:
 
 ```text
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

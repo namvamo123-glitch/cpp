@@ -1,7 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
+int main(int argc, char* argv[]) {
+    bool use_color = true;
+    for (int i = 1; i < argc; ++i) {
+        if (string(argv[i]) == "--nocolor") {
+            use_color = false;
+        }
+    }
+
     const int width = 80;
     const int height = 25;
     const int max_iter = 1000;
@@ -30,17 +37,24 @@ int main() {
                 ++iter;
             }
 
-            char out;
             if (iter >= max_iter) {
-                out = ' ';
+                if (use_color) {
+                    cout << "\033[0m ";
+                } else {
+                    cout << ' ';
+                }
             } else {
                 int idx = (int)((double)iter / (double)max_iter * (gsize - 1));
-                // clamp
                 if (idx < 0) idx = 0;
                 if (idx >= gsize) idx = gsize - 1;
-                out = gradient[idx];
+
+                if (use_color) {
+                    int color = 16 + (iter * 7) % 216;
+                    cout << "\033[38;5;" << color << "m" << gradient[idx] << "\033[0m";
+                } else {
+                    cout << gradient[idx];
+                }
             }
-            cout << out;
         }
         cout << '\n';
     }
